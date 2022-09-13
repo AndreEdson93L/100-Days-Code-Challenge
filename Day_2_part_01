@@ -1,0 +1,101 @@
+#1 Lesson
+
+#Strings
+print(len("Hello"))
+print("Hello"[4])
+print("123" + "Concatenation!" + "234")
+
+#Integer
+print(123 + 345)
+
+#Float
+PI = 3.14159
+
+#Boolean
+Am_I_Beatiful = False
+Am_I_Bueatiful_As_Human_Being = True
+#__________________________________________________________________________________________
+
+n = len(input("What is your name?"))
+print("Your name has " + str(n) + " n. of characters")
+
+n_string = str(n)
+
+print(type(n))
+print(type(n_string))
+
+print(70 + float("100.5"))
+print(str(70) + str(100))
+
+#__________________________________________________________________________________________
+
+#float = 6 / 3
+#print(float)
+#print(2 ** 3)
+
+"""
+PEMDAS
+
+Parentheses ()
+Exponents **
+Multiplication *
+Division /
+Addition +
+Subtraction -
+"""
+
+print("3 * 3 + 3 / 3 - 3 **2")
+print("What's the result Buddy?")
+
+result = 3 * 3 + 3 / 3 - 3 **2
+
+guess = input("Guess what is going to be the right answer.")
+
+fluttuante_guess = float(guess)
+integerrimo_guess = int(guess)
+
+print(type(result))
+print(type(fluttuante_guess))
+
+if result == fluttuante_guess:
+  print("A Genius!! Shh")
+else:
+  print("Everybody love Italy. Cit. Matteo Renzi")
+
+#__________________________________________________________________________________________
+
+print(int(1.1))
+print(int(1.2))
+print(int(1.3))
+print(int(1.4))
+print(int(1.5))
+print(int(1.6))
+print(int(1.7))
+print(int(1.8))
+print(int(1.9))
+
+count = 1.0
+for n in range(9):
+  print(f"_________ LOOP NUMBER {n}")
+  count += 0.1
+  print(count)
+  print(round(count))
+  print("END Loop. New Loop starting..")
+
+#__________________________________________________________________________________________
+
+height = input("enter your height in m: ")
+weight = input("enter your weight in kg: ")
+
+
+h = float(height)
+w = float(weight)
+
+result = w / h ** 2
+result_rounded = round(result)
+
+print(result_rounded)
+
+#___________________________________________________________________________________________
+
+#Keep studying from 24. Number Manipulation and F Strings in Python
