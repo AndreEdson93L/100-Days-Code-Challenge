@@ -1,0 +1,51 @@
+print(round(8 / 3, 2)) # 2.67
+print(round(2.666666 / 2)) # 2.67
+print(8 // 3) # Integer result 2
+print(type(8 // 3))
+
+result = 4 / 2
+result /= 2
+print(result)
+
+score = 0
+
+# User scores a point
+# The same
+score = score + 1
+score += 1
+score -= 1
+score *= 1
+score /= 1
+
+# f string
+
+score = 0
+height = 1.73
+isWinning = True
+
+#print("Your score is " + str(score))
+print(f"""Your score is {score}
+Your height is {height}
+And Are You winning? {isWinning}""")
+
+print("--------//// Formatting Strings ////------------->")
+
+print("""Your score is {}
+Your height is {}
+And Are You winning? {}""".format(score, height, isWinning))
+
+#_________________________________________________________________________________________
+
+# variables
+max_age = 90
+
+age = input("What is your current age?")
+
+years_left = (max_age - int(age)) 
+days_left = years_left * 365
+months_left = years_left * 12
+weeks_left = years_left * 52
+
+print("You have {} days, {} weeks, and {} months left.".format(days_left, weeks_left, months_left))
+
+# Interactive Coding Exercise. Life in Weeks
