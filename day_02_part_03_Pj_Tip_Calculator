@@ -1,0 +1,21 @@
+#If the bill was $150.00, split between 5 people, with 12% tip. 
+
+#Each person should pay (150.00 / 5) * 1.12 = 33.6
+#Format the result to 2 decimal places = 33.60
+
+#https://replit.com/@AndreEdson93L/tip-calculator-start-1?v=1
+
+print("Welcome to the tip calculator.")
+
+bill = float(input("What was the total bill? $"))
+tip_percentage = float(input("What percentage tip would you like to give? Ex. 10, 12, or 15? "))
+split_the_bill = float(input("How many people to split the bill? "))
+
+amount_per_person = bill / split_the_bill
+tip_per_person = amount_per_person * tip_percentage / 100
+amount_per_person_plus_tip = round(amount_per_person + tip_per_person, 2)
+
+result = "${:0,.2f}".format(amount_per_person_plus_tip)
+display_message = f"Each person should pay: {result}"
+
+print(display_message)
