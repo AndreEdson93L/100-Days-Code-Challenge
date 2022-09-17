@@ -1,0 +1,80 @@
+# day 3, part 1, Odd Or Even with the Modulo Operator
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+else:
+  print("You are too little buddy.")
+
+# Conditional Operators
+# == != < <= >= > 
+
+# ODD (Dispari) or EVEN (Pari)
+
+number = int(input("Which number do you want to check? "))
+
+if number % 2 == 0:
+    print("This is an even number.")
+else:
+    print("This is an odd number.")
+
+# Understanding MODULUS in Python
+
+
+# Interpreted Language (Python, R...)
+"""
+Interpreted Language (Python, R...)
+Remainder = a - [(a/b)] * b
+
+[In the remainder this is the Floor function]
+
+Floor(3.2) = 3
+Ceil(3.2) = 4
+Floor(-3.6) = -4
+Ceil(-3.6) = -3
+
+Example: 10 % 3
+
+10 - ([10/3] * 3)
+10 - ([3.33] * 3)
+[Floor function 3.33 ] == 3
+10 - (3 * 3)
+10 - 9
+1
+
+Example: -10 % 3
+
+- 10 - ([-10/3] * 3)
+- 10 - ([-3.33] * 3)
+[Floor function -3.33 ] == -4
+- 10 - (-4 * 3)
+- 10 + 12
++ 2
+"""
+
+# Compiled language
+"""
+Compiled language
+a%b
+
+10 % 3 = 1
+15 % 3 = 0
+10 % -3 = 1
+-10 % 3 = -1
+-10 % -3 = -1
+"""
+
+# Comparison between Compiled Languages and Interpreted Languages
+"""
+https://www.youtube.com/watch?v=XQwcEV_eTlc
+
+C. Lang. Vs I. Lang.
+
+10 % 3 = 1      vs     10 % 3 = 1
+10 % 3 = 1      vs     10 % 3 = -2
+10 % 3 = -1     vs    -10 % 3 = 2
+10 % 3 = -1     vs    -10 % 3 = -1
+
+"""
