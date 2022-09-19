@@ -1,0 +1,63 @@
+print("Welcome to the rollercoaster!")
+
+height = int(input("Are you enough tall buddy (cm)? "))
+age = int(input("How old are you? "))
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+
+  if age < 12:
+    print("Free Entry Kiddo!")
+  elif age < 18:
+    print("7 boxes please")
+  else:
+    print("12 boxes please")
+else:
+  print("Sorry, you have to grow talle before you can ride.")
+
+#__________________________________________________________________
+
+# R < 18.5          |underweight
+# 25 > R > 18.5     |normal weight
+# 30 > R > 25       |overweight
+# 30 > R > 35       |obese
+# R > 35            |clinically obese
+
+"""
+link: https://en.wikipedia.org/wiki/Body_mass_index
+
+BMI (Body Mass Index) = weight (kg) / height^2 (m2)
+"""
+
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+
+bmi = round(weight / height ** 2)
+
+underweight = "Your BMI is 18, you are underweight."
+normal_weight = "Your BMI is 22, you have a normal weight."
+slightly_overweight = "Your BMI is 28, you are slightly overweight."
+obese = "Your BMI is 33, you are obese."
+clinically_obese = "Your BMI is 40, you are clinically obese."
+
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+
+bmi = round(weight / height ** 2)
+
+underweight = "Your BMI is 18, you are underweight."
+normal_weight = "Your BMI is 22, you have a normal weight."
+slightly_overweight = "Your BMI is 28, you are slightly overweight."
+obese = "Your BMI is 33, you are obese."
+clinically_obese = "Your BMI is 40, you are clinically obese."
+
+if bmi < 18.5:
+  print(underweight)
+elif bmi < 25:
+  print(normal_weight)
+elif bmi < 30:
+  print(slightly_overweight)
+elif bmi < 35:
+  print(obese)
+else:
+  print(clinically_obese)
