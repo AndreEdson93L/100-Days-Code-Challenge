@@ -1,0 +1,29 @@
+#if a year is divisible by 4... is a leap year.
+#if a year is divisible by 100... it is not a leap year.
+#unless is also divisible by 400
+
+# / 4 Leap year
+# / 100 Not a leap year
+# / 400 Leap year
+
+import sys
+
+flag = True
+
+while flag == True:
+  year = int(input("Which year do you want to check? "))
+  if year % 4 != 0:
+    print("Common year")
+  elif year % 100 != 0:
+    print("Leap year")
+  elif year % 400 != 0:
+    print("Common year")
+  else:
+    print("Leap year.")
+    
+  turn_on_off = input("If you want to ask another year press any key, otherwise press 0: ")
+  if turn_on_off == "0":
+    flag = bool(int(turn_on_off))
+    print("Program has finished to execute.")
+  
+sys.exit()
