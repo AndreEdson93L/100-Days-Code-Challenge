@@ -1,0 +1,94 @@
+These are all the functions we have encountered so far:
+
+forward, back, left, right, penup, pendown, width, color, begin_fill, end_fill, speed, hideturtle.
+___________________________________________________________________________________________________
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+bill = 0
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+  age = int(input("What is your age? "))
+  if age < 12:
+    bill = 5
+     print("Child tickets are $5.")
+  elif age <= 18:
+    bill = 7
+    print("Youth tickets are $7.")
+  else:
+    bill = 12
+    print("Adult tickets are $12.")
+
+wants_photo = input("Do you want a photo taken? Y or N. ")
+if wants_photo == "Y":
+bill += 3
+
+print(f"Your final bill is ${bill}")
+
+else:
+print("Sorry, you have to grow taller before you can ride.")
+___________________________________________________________________________________________________
+# A and B,
+# C or D,
+# not E
+
+# 36. Logical Operators
+___________________________________________________________________________________________________
+import sys
+
+asking_pizza_size = True
+asking_ingredients = True
+order_size_pizza = ""
+add_ingradient = ""
+extra_ingradients = []
+bill = 0
+
+while asking_pizza_size: 
+  order_size_pizza = input("""
+  What kind of pizza would you like?
+  Press the relative number:
+  1. Small, 5 $
+  2. Medium, 56 $
+  3. Large, 3400000000000 $ (Super offer!)
+  """)
+  if order_size_pizza != "1" or order_size_pizza != "2" or order_size_pizza != "3":
+    asking_pizza_size = False
+    
+if order_size_pizza == "1":
+  bill += 1
+elif order_size_pizza == "2":
+  bill += 56
+elif order_size_pizza == "3":
+  bill += 3400000000000
+  
+print("Press the related number to add an ingradient to your pizza.")
+
+while asking_ingredients:
+  add_ingradient = input("""
+  1. Cheese (4 $)
+  2. Bacon (5 $)
+  3. Pepperoni (11 $)
+  4. Ananas (-50 $)
+  0. Pay.
+  """)
+
+  if add_ingradient == "0":
+    asking_ingredients = False
+  if add_ingradient == "1":
+    extra_ingradients.append(4)
+  elif add_ingradient == "2":
+    extra_ingradients.append(5)
+  elif add_ingradient == "3":
+    extra_ingradients.append(11)
+  elif add_ingradient == "4":
+    extra_ingradients.append(-50)
+  else:
+    extra_ingradients.append(0)
+
+for value in extra_ingradients:
+  bill += int(value)
+
+receipt = f"Your final bill is {bill}! Thank you for choosing us"
+print(receipt)
+
+sys.exit()
