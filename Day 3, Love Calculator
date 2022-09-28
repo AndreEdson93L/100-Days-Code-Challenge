@@ -1,0 +1,78 @@
+# First Version
+
+print("Welcome to the Hate Calculator!")
+print("Let's how much you hate that person? Muahah")
+name1 = input("What is your name? \n").lower()
+name2 = input("What is their name? \n").lower()
+
+# Count TRUE
+# Count LOVE
+# Then combine the two result.
+
+yolo = "yolo"
+counter1 = []
+counter2 = []
+result = 0
+
+for x in name1:
+  if x == "t" or x == "r" or x == "u" or x == "e" or x == "l" or x == "o" or x == "v": 
+    counter1.append(f"Find Value: {x}")
+  else:
+    yolo = "yolo"
+
+for x in name2:
+  if x == "t" or x == "r" or x == "u" or x == "e" or x == "l" or x == "o" or x == "v":
+    counter2.append(f"Find Value: {x}")
+  else:
+    yolo = "yolo"
+
+result = int(str(len(counter1)) + str(len(counter2)))
+
+if result < 10 or result > 90:
+  print("There no love between you guys :(")
+elif result > 40 and result < 50:
+  print("That's a couple! Good luck ;P")
+else:
+  print(f"That' s the hate/love score: {result}. Whatever.. I am cool. I am a coder.")
+    
+    
+# Second love calculator ___________________________________________________________________
+
+print("Welcome to the Hate Calculator!")
+print("Let's how much you hate that person? Muahah")
+name1 = input("What is your name? \n").lower()
+name2 = input("What is their name? \n").lower()
+
+combined_string = name1 + name2
+lower_case_string = combined_string.lower()
+
+t = lower_case_string.count("t")
+r = lower_case_string.count("r")
+u = lower_case_string.count("u")
+e = lower_case_string.count("e")
+
+print(f"t: {t}, r: {r}, u: {u}, e: {e}")
+
+true = t + r + u + e
+
+l = lower_case_string.count("l")
+o = lower_case_string.count("o")
+v = lower_case_string.count("v")
+e = lower_case_string.count("e")
+
+love = l + o + v + e
+
+print(f"l: {l}, o: {o}, v: {v}, e: {e}")
+
+love_score = int(str(true) + str(love))
+
+print(love_score)
+
+
+if love_score < 10 or love_score > 90:
+  print("There no love between you guys :(")
+elif love_score > 40 and love_score < 50:
+  print("That's a couple! Good luck ;P")
+else:
+  print(f"That' s the hate/love score: {love_score}. Whatever.. I am cool. I am a coder.")
+    
