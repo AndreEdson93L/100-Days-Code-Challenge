@@ -1,0 +1,81 @@
+print('''
+*******************************************************************************
+                                                           ,/     _,---._
+                    ,       _,'/|  ,-'       `.
+                     \.__,-' // `./   ____     \
+  Art by              \\    //   `. ,'\__/`.    \
+   Erik Andersson      \\  //      `.,'  `./`.   `.
+                        ||//         `-.   `.'|    \
+                        / ,`,===========:=- |-|     \
+            __        ,' )\,_        ,-'    | |      `.__
+          /))/)       \,/)/ \\\    /'      /`-|          `---.___
+         ())'_)       / '   /,\\ ,/       |`-,'
+         /)).\____,-_/  , ,'~  \\|        |--|          ,
+        (()||_)~~~~|' ,','      )'        `._,\  `.     `.
+         ((\\/      \/_/       (          / `.-\   \      )
+           /\\                  `,       /    \-`-.,'   ,/
+          / ')\                        ,'     /`-./   ,'---.____
+         |     |                      /   ,--'   /   /---.______
+         |  |  |            ,-.-. _,-'  ,-,-._  /  _/
+         |_/|_,'           /\/ ) `  /|,/\/\_, `-  /\
+          // ||_          //'|/\__,'\|(/'|/ \___,'`,)
+          `-  ~~          `  `           `
+*******************************************************************************
+''')
+print("Welcome to Treasure Island Crazy Game.")
+print("Your mission is to find the treasure.") 
+
+print("Are you a Fugassa or a Fugasso?")
+warnin_message = "Before starting the game be aware that any miss type won't be interprated correctly. Have fun!"
+choose_your_character = input("Press 1. For Fugassa \nPress 2. For Fugasso \n")
+
+# CHARACTER
+if choose_your_character == "1":
+  print("Fugassella!!")
+elif choose_your_character == "2":
+  print("Fugasso Bagasso!")
+else:
+  print("Don't know what you are funny thing! Anyway... let's play!")
+
+# STARTING THE GAME
+print("Downloading the game...")  
+print("///////////////////______ Almost finish...")
+print(warnin_message)
+  
+# GAME
+left_right = input("You wanna go to the left or to the right? [left][right]: ").lower()
+if left_right != "left":
+  print("You fallen into a Hole! Adìos Muchacho!")
+  
+elif left_right == "left":
+  swim_wait = input("Do you wanna swim or wait? [swim][wait]: ").lower()
+  if swim_wait != "wait":
+    print("You have been attacked by a trout! Game over.")
+  elif swim_wait == "wait":
+    door_color = input("There are multiple doors in front of you, which of these doors you want to open? [red][blue][yellow] \n").lower()
+    if door_color == "red":
+      print("\n You have been burned by some Aliens! *.*!")
+    elif door_color == "blue":
+      print("\n You Win. You Find the Dragon!!")
+      print("""
+      
+                      ,-,-      
+                     / / |      
+   ,-'             _/ / /       
+  (-_          _,-' `Z_/        
+   "#:      ,-'_,-.    \  _     
+    #'    _(_-'_()\     \" |    
+  ,--_,--'                 |    
+ / ""                      L-'\ 
+ \,--^---v--v-._        /   \ | 
+   \_________________,-'      | 
+                    \           
+                     \          
+       Wny            \         
+                               
+      """)
+      print("Problem is, he/she smoked you. Sorry. Bye!")
+    elif door_color == "yellow":
+      print("\n You find the treasure! It is a Teleperformance Coupon of 30 euro that you can use only on Amazon and you will never receive, unless you open a ticket with the ES, multiple times. Have a nice day a don't forget the Happy Survey! :)")
+    else:
+      print("\n This game is over bro. cit. Boston Mike")
