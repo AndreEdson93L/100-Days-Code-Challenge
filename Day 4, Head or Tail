@@ -1,0 +1,21 @@
+import random 
+
+#Head or Tail
+#No random number in computer science.
+#The day we will be able to create a real random number is the day we will be closer to create a real IA (capable of thinking by her/his/x.. self)
+
+count_head = 0
+count_tail = 0
+
+for n in range(1_000_000):
+  n = random.randint(0, 1)
+  
+  if n == 0:
+    count_head += 1
+  else:
+    count_tail += 1
+
+check_statistics = {"Head: " : count_head, "Tail: " : count_tail}
+
+for key, value in check_statistics.items():
+  print(key, ": ", value)
