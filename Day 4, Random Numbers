@@ -46,3 +46,22 @@ result = {"1: " : count_one, "2: " : count_two, "3: " : count_three, "4: " : cou
 
 for key, value in result.items():
   print(key, ":", value)
+  #____________________________________________________________________________________________________________
+  
+import random 
+
+#random Integer
+random_interger = random.randint(0, 5) # 0 to 5 [0, 1, 2, 3, 4, 5]
+print(random_interger)
+
+#random Float
+random_float = random.random() 
+print(random_float) # 0 to 0.999999999
+
+#random Bigger Float
+random_bigger_float = random.random() * random_interger
+print(random_bigger_float) # random decimal number between 0.0000 and 4.9999
+
+#random Bigger Float
+random_bigger_float_two = random.random() * 5
+print(random_bigger_float_two) # random decimal number between 0.0000 and 4.9999
