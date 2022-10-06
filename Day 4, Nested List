@@ -1,0 +1,10 @@
+#Nested Lists
+#https://www.healthline.com/nutrition/dirty-dozen-foods#the-dirty-dozen
+
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
+
+dirty_dozen = [fruits, vegetables]
+
+print(dirty_dozen)
+print("Nested Lists")
