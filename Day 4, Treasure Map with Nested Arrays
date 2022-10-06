@@ -1,0 +1,41 @@
+print_the_map = False
+
+row1 = ["⬜️","⬜️","⬜️"]
+row2 = ["⬜️","⬜️","⬜️"]
+row3 = ["⬜️","⬜️","⬜️"]
+map = [row1, row2, row3]
+print(f" 3 {row1}\n 2 {row2}\n 1 {row3}\n \t a     b     c")
+position = input("Where do you want to put the treasure? 3a, 2b, 2c, 1c are example of valid inputs [number:letter] >>>> ")
+
+#Cannot use a match statement in a Python Online Editor.
+
+if position == "3a" or position == "3b" or position == "3c" or position == "2a" or position == "2b" or position == "2c" or position == "1a" or position == "1b" or position == "1c":
+  print_the_map = True
+else:
+  print_the_map = False
+  
+if position == "3a":
+    row1[0] = "X"
+elif position == "3b":
+    row1[1] = "X"
+elif position == "3c":
+    row1[2] = "X"
+elif position == "2a":
+    row2[0] = "X"
+elif position == "2b":
+    row2[1] = "X"
+elif position == "2c":
+    row2[2] = "X"
+elif position == "1a":
+    row3[0] = "X"
+elif position == "1b":
+    row3[1] = "X"
+elif position == "1c":
+    row3[2] = "X"
+else:
+  print("\nNot a Valid Input.")
+
+if print_the_map == True:
+  print(f"\n{row1}\n{row2}\n{row3}")
+else:
+  print("There is not such a precious treasure as life.")
