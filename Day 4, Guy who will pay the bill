@@ -1,0 +1,22 @@
+import random
+
+empty_input = "No available elements in the array [Just an empty input]"
+
+names_string = input("Give me everybody's names, separated by a comma. \n")
+names = names_string.split(", ")
+
+#troubleshoot
+#print("--> " + names[0] + " <--")
+
+#random Hand Made
+if names[0] != "":
+  random_lucky_guy = random.randint(0, len(names) - 1)
+  print(f"The bill will be paid by {names[random_lucky_guy]}")
+else:
+  print(empty_input)
+
+#function choice()
+if names[0] != "":
+  print(f"The bill will be paid by {random.choice(names)}")
+else:
+  print(empty_input)
