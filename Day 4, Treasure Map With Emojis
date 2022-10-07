@@ -1,0 +1,62 @@
+emergency_break_flag = False
+vertical = ""
+horizontal = ""
+
+
+row1 = ["⬜️","⬜️","⬜️"]
+row2 = ["⬜️","⬜️","⬜️"]
+row3 = ["⬜️","⬜️","⬜️"]
+
+map = [row1, row2, row3]
+print(f"""
+    1     2     3
+c {row1}
+b {row2}
+a {row3}""")
+
+print("""
+Example of valid Inputs are [letter, number]: a1, b3, c1 atc..
+""")
+
+position = input("Where do you want to put the treasure? ")
+
+if len(position) == 2:
+  vertical = position[0]
+  horizontal = position[1]
+
+# vertical check
+if vertical == "c":
+  vertical = 0
+elif vertical == "b":
+  vertical = 1
+elif vertical == "a":
+  vertical = 2
+else:
+  vertical = 0
+  emergency_break_flag = True
+  
+# horizontal check
+if horizontal == "1":
+  horizontal = 0
+elif horizontal == "2":
+  horizontal = 1
+elif horizontal == "3":
+  horizontal = 2
+else:
+  horizontal = 0
+  emergency_break_flag = True
+
+if emergency_break_flag != True:
+  map[vertical][horizontal] = "💰"
+else:
+  map[0][0] = "☠"
+  map[0][1] = "☠"
+  map[0][2] = "☠"
+  map[1][0] = "☠"
+  map[1][1] = "☠"
+  map[1][2] = "☠"
+  map[2][0] = "☠"
+  map[2][1] = "☠"
+  map[2][2] = "☠"
+  
+print(f"{row1}\n{row2}\n{row3}")
