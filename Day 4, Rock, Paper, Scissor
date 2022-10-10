@@ -1,0 +1,132 @@
+import random
+
+#Docs
+#https://wrpsa.com/
+#https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+logo = """
+  _____            _        _____                         _____      _                    
+ |  __ \          | |      |  __ \                       / ____|    (_)                   
+ | |__) |___   ___| | __   | |__) |_ _ _ __   ___ _ __  | (___   ___ _ ___ ___  ___  _ __ 
+ |  _  // _ \ / __| |/ /   |  ___/ _` | '_ \ / _ \ '__|  \___ \ / __| / __/ __|/ _ \| '__|
+ | | \ \ (_) | (__|   < _  | |  | (_| | |_) |  __/ |_    ____) | (__| \__ \__ \ (_) | |   
+ |_|  \_\___/ \___|_|\_( ) |_|   \__,_| .__/ \___|_( )  |_____/ \___|_|___/___/\___/|_|   
+                       |/             | |          |/                                     
+                                      |_|                                                
+"""
+
+computer_wins = """
+ __    __    __     ____  __.________       __    __    __                             
+ \ \   \ \   \ \   |    |/ _|\_____  \     / /   / /   / /                             
+  \ \   \ \   \ \  |      <   /   |   \   / /   / /   / /                              
+  / /   / /   / /  |    |  \ /    |    \  \ \   \ \   \ \                              
+ /_/   /_/   /_/   |____|__ \\_______  /   \_\   \_\   \_\                             
+                           \/        \/                                                
+_________                               __                         .__              ._.
+\_   ___ \  ____   _____ ______  __ ___/  |_  ___________  __  _  _|__| ____   _____| |
+/    \  \/ /  _ \ /     \\____ \|  |  \   __\/ __ \_  __ \ \ \/ \/ /  |/    \ /  ___/ |
+\     \___(  <_> )  Y Y  \  |_> >  |  /|  | \  ___/|  | \/  \     /|  |   |  \\___ \ \|
+ \______  /\____/|__|_|  /   __/|____/ |__|  \___  >__|      \/\_/ |__|___|  /____  >__
+        \/             \/|__|                    \/                        \/     \/ \/
+"""
+
+human_wins = """
+   __    __  ._.  _____.___.               __      __.__          ._.  __    __   
+  / /   / /  | |  \__  |   | ____  __ __  /  \    /  \__| ____    | |  \ \   \ \  
+ / /   / /   |_|   /   |   |/  _ \|  |  \ \   \/\/   /  |/    \   |_|   \ \   \ \ 
+ \ \   \ \   |-|   \____   (  <_> )  |  /  \        /|  |   |  \  |-|   / /   / / 
+  \_\   \_\  | |   / ______|\____/|____/    \__/\  / |__|___|  /  | |  /_/   /_/  
+             |_|   \/                            \/          \/   |_|             
+"""
+
+draw = """
+________                                 
+\______ \____________ __  _  __          
+ |    |  \_  __ \__  \\ \/ \/ /          
+ |    `   \  | \// __ \\     /           
+/_______  /__|  (____  /\/\_/ /\  /\  /\ 
+        \/           \/       \/  \/  \/
+"""
+
+human_player_score = 0
+computer_player_score = 0
+isPlaying = False
+
+#score_table = f"Score:\nhuman: {human_player_score} \ncomputer: {computer_player_score} "
+
+start = input("Welcome to the most dangerous game... please press Y to enter the game >> ").lower()
+
+if start == "y":
+  print(logo)
+  isPlaying = True
+else:
+  print("You coward!")
+
+while isPlaying:
+  #computer_choice aka cc
+  #cc 0 == rock
+  #cc 1 == paper
+  #cc 2 == scissor
+
+  isValidInput = False
+  
+  computer_choice = random.randint(0, 2)
+  human_choice = input("\nDo you choice!\nPresse the related number. \n 1. Rock \n 2. Paper \n 3. Scissor \n>> ")
+
+  if human_choice == "1" or human_choice == "2" or human_choice == "3":
+    human_choice = int(human_choice) - 1
+    isValidInput = True
+  else:
+    print("You didn't type a valid input")
+
+  while isValidInput:
+
+    computer_choice_literal = ""
+    
+    if computer_choice == 0:
+      computer_choice_literal = "rock"
+    elif computer_choice == 1:
+      computer_choice_literal = "paper"
+    elif computer_choice == 2:
+      computer_choice_literal = "scissor"
+
+      
+    print(f"computer has chosen >> {computer_choice_literal} <<")
+    
+    if computer_choice == human_choice:
+      print(draw)
+    elif computer_choice == 0 and human_choice == 1:
+      print(human_wins)
+      human_player_score += 1
+    elif computer_choice == 0 and human_choice == 2:
+      print(computer_wins)
+      computer_player_score += 1
+    elif computer_choice == 1 and human_choice == 0:
+      print(computer_wins)
+      computer_player_score += 1
+    elif computer_choice == 1 and human_choice == 2:
+      print(human_wins)
+      human_player_score += 1
+    elif computer_choice == 2 and human_choice == 0:
+      print(human_wins)
+      human_player_score += 1
+    elif computer_choice == 2 and human_choice == 1:
+      print(computer_wins)
+      computer_player_score += 1
+    else:
+      print("Error 404")
+
+    print(f"Score:\nhuman: {human_player_score} \ncomputer: {computer_player_score} ")
+
+    keep_playing = input("Do you want keep playing? Y/N ").lower()
+
+    if keep_playing == "y":
+      isValidInput = False
+    elif keep_playing == "n":
+      print("See you soon!")
+      isPlaying = False
+      isValidInput = False
+    else:
+      print("I ' ll take as a no. Goodbye")
+      isPlaying = False
+      isValidInput = False
