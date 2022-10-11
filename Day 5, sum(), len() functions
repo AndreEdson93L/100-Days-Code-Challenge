@@ -1,0 +1,44 @@
+student_heights = input("Input a list of student heights separated by a comma: ").split(",")
+
+def demostration(list):
+  for n in range(0, len(list)):
+    print(f"""
+    n : {n},
+    student_heights[n] = {list[n]}
+    student_heights[n] = int(student_heights[n])
+    student_heights[n] = {int(list[n])}
+
+    code_input : print(student_heights)
+    code_output : {list}
+    """)
+    list[n] = int(list[n])
+
+
+def exercise_hand_made(list):
+  sum = 0
+  length = 0
+  for n in list:
+    n = int(n)
+    sum += n
+    length += 1
+
+  height_average = sum / length
+  height_average = round(height_average)
+  
+  print(f"sum: {sum}")
+  print(f"length: {length}")
+  print(f"height_average (hand_made): {height_average}")
+
+
+def exercise_built_functions(list):
+  for n in range(0, len(list)):
+    list[n] = int(list[n])
+  
+  total_height = sum(list)
+  number_of_students = len(list)
+  average_height = round(total_height / number_of_students)
+  print(f"average_height (built_function): {average_height}")
+
+#demostration(student_heights)
+exercise_hand_made(student_heights)
+exercise_built_functions(student_heights)
