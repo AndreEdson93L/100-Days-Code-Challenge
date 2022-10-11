@@ -1,0 +1,18 @@
+#DOCS Have I been Pwned?
+#https://haveibeenpwned.com/
+
+list_of_items = [0, 1, 2, 3]
+
+for item in list_of_items:
+  print(item)
+  #Do something to each item
+
+list_of_fruits = ['Apple', 'Peach', 'Pear']
+
+for fruit in list_of_fruits:
+  print(fruit, end = " ")
+
+for fruit in list_of_fruits:
+  print(fruit + ' pie!')
+
+print(list_of_fruits)
