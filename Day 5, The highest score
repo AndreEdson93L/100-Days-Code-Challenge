@@ -1,0 +1,66 @@
+student_scores = input("Input a list of student scores separeted by a comma: ").split(",")
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+
+#print(max(student_scores))
+#print(min(student_scores))
+
+#Pseudo Code not really understandble..
+"""
+for loop
+
+n[0] > n[1], True
+n[0] > n[2], n[3] etc...
+
+n[0] > [n1] False
+
+Max != n[0]
+Max = n[1]
+
+n[1] > n[2], n[3]
+
+"""
+
+#Controlling Out Of Bound Exception
+"""
+n = 3
+print(n + 1)
+print(len(student_scores))
+
+if n + 1 > len(student_scores) - 1:
+  print("Out Of Bound Index")
+"""
+
+
+#Find the max value, solution with troubleshooting steps
+"""
+max_value = student_scores[0]
+contatore = 0
+
+
+for n in range(0, len(student_scores)):
+  print(f"n + 1: {n + 1}")
+  print(f"student_scores[n]: {student_scores[n]}")
+  print(f"len(student_scores) - 1: {student_scores[n]}")
+
+  if n + 1 <= len(student_scores) - 1:
+    if max_value < student_scores[n + 1]:
+      max_value = student_scores[n + 1]
+    
+  print(f"max_value: {max_value}")
+  
+print(f"The highest score in the class is: {max_value}")
+"""
+
+
+      
+# Find the Max Value, Clean Version
+max_value = student_scores[0]
+contatore = 0
+
+for n in range(0, len(student_scores)):
+  if n + 1 <= len(student_scores) - 1:
+    if max_value < student_scores[n + 1]:
+      max_value = student_scores[n + 1]
+    
+print(f"The highest score in the class is: {max_value}")
