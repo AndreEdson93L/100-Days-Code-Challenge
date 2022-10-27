@@ -1,0 +1,54 @@
+a = 0
+b = 10
+
+for number in range(a, b):
+  print(number)
+
+print("################################")
+
+a = 3
+b = 10
+
+for number in range(a, b):
+  print(number)
+
+print("################################")
+
+a = 0
+b = 11
+step_size = 2
+
+for number in range(a, b, step_size):
+  print(number)
+
+print("################################")
+
+#Carl Gauss For Loop
+sum = 0
+
+for n in range(0, 101):
+  sum += n
+
+print(sum)
+
+#Carl Gauss simple genius calculation
+print((100 * 101) / 2)
+
+"""
+Some note on the Carl Gauss Calculation.
+
+In my opnion 101 is the range and 100 is the sum.
+
+I rether prefer to sum in this way starting counting from zero..
+
+0 + 100 = 100
+1 + 99 = 100
+2+ 98 = 100
+
+and so on.
+The result of the calculation doesn't change.
+
+101(times) * 100(sum) / 2 = 5050
+
+Lorenzoni Andrea Edson
+"""
