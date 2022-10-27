@@ -1,0 +1,38 @@
+#FizzBuzz
+
+"""
+Print every number from 1 to 100
+
+Divisible by 3 "Fizz"
+Divisible by 5 "Buzz"
+Divisible by both "FizzBuzz"
+"""
+
+a = 0
+b = 101
+
+countFizzBuzz = 0
+countFizz = 0
+countBuzz = 0
+countN = 0
+
+for n in range(a, b):
+  if n % 3 == 0 and n % 5 == 0:
+    print("FizzBuzz")
+    countFizzBuzz += 1
+  elif n % 3 == 0:
+    print("Fizz")
+    countFizz += 1
+  elif n % 5 == 0:
+    print("Buzz")
+    countBuzz += 1
+  else:
+    print(n)
+    countN += 1
+
+
+dict = {"FizzBuzz":countFizzBuzz, "Fizz":countFizz, "Buzz":countBuzz, "n":countN}
+
+for key,value in dict.items():
+	print(key, ':', value)
+    
