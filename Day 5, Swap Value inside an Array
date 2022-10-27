@@ -1,0 +1,30 @@
+#Example of algorithm that I built to swap value randomly inside an array
+
+stringa_di_prova = "Hello World!!"
+
+to_array_string = [char for char in stringa_di_prova]
+
+for n in range(0, len(stringa_di_prova)):
+  #Value Swap hand Made
+  temp = to_array_string[n] 
+  random_integer = random.randint(0, len(to_array_string) - 1)
+  to_array_string[n] = to_array_string[random_integer]
+  to_array_string[random_integer] = temp
+
+print(len(to_array_string))
+print(len(stringa_di_prova))
+
+def convert_to_string(s):
+ 
+    # initialization of string to ""
+    new = ""
+ 
+    # traverse in the string
+    for x in s:
+        new += x
+ 
+    # return string
+    return new
+ 
+final_password = convert_to_string(to_array_string)
+print(final_password)
