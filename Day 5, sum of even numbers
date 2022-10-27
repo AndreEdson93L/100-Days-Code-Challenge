@@ -1,0 +1,47 @@
+#first solution
+a = 0
+b = 101
+step_size = 2
+sum = 1
+
+for number in range(a, b, step_size):
+  sum += number
+
+print(sum)
+
+#second solution
+a = 0
+b = 101
+sum = 1
+
+for n in range(a, b):
+  if n % 2 == 0:
+    sum += n
+
+print(sum)
+
+#third solution
+a = 0
+b = 101
+sum = 0
+isOne = True
+
+for n in range(a, b):
+  if n == 1 and isOne == True:
+    sum += n
+    isOne = False
+  if n % 2 == 0:
+    sum += n
+
+print(sum)
+
+#fourth solution
+a = 0
+b = 101
+sum = 0
+
+for n in range(a, b):
+  if n % 2 == 0 or n == 1:
+    sum += n
+
+print(sum)
