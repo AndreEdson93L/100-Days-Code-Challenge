@@ -1,0 +1,27 @@
+#https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Maze&url=worlds%2Ftutorial_en%2Fmaze1.json
+
+def turn_right():
+    repeat 3:
+        turn_left()
+
+#follow the right edge of the maze
+#turn right when you can
+#if you can't turn right, go straight ahead
+#turn left is the last resort
+
+#these few lines of code are harder than you think
+
+while not at_goal():
+    if front_is_clear() and wall_on_right():
+        move()
+    elif right_is_clear():
+        counter = 0
+        while right_is_clear():
+            turn_right()
+            move()
+            counter += 1
+            if counter >= 3:
+                while front_is_clear():
+                    move()
+    elif wall_in_front():
+        turn_left()
