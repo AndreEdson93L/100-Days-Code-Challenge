@@ -1,0 +1,65 @@
+import random
+
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+is_there_any_letter_left = True
+
+print(f'The solution is {chosen_word}!')
+
+display = []
+
+for i in range(len(chosen_word)):
+    display += "_"
+
+while is_there_any_letter_left:
+  guess = input("Guess a letter: ").lower()
+  
+  for i in range(len(chosen_word)):
+    if chosen_word[i] == guess:
+      display[i] = guess
+
+  counter = 0
+  
+  for i in range(len(chosen_word)):
+    if "_" == display[i]:
+      counter += 1
+
+    if counter == 0:
+      is_there_any_letter_left = False
+    else:
+      is_there_any_letter_left = True
+    
+  counter = 0  
+  
+  print(display)
+
+print("You win")
+
+#__________////_SECOND_SOLUTION_////____________
+
+import random
+
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+end_of_game = False
+
+print(f'The solution is {chosen_word}!')
+
+display = []
+
+for i in range(len(chosen_word)):
+    display += "_"
+
+while not end_of_game:
+  guess = input("Guess a letter: ").lower()
+  
+  for i in range(len(chosen_word)):
+    if chosen_word[i] == guess:
+      display[i] = guess
+
+  if "_" not in display:
+    end_of_game = True
+  
+  print(display)
+
+print("You win")
