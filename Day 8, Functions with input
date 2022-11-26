@@ -1,0 +1,14 @@
+def greet():
+  for i in range(3):
+    print("Hello World!")
+    print(i)
+
+def greet_name(name):
+  #parameter -> name
+  #argument -> "Andrea"
+  return f"Hello {name}"
+  
+greet()
+print(greet_name("Andrea!"))
+name = "Andrea!!"
+print("Hello {0}".format(name))
