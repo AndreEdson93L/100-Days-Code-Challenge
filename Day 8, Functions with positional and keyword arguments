@@ -1,0 +1,5 @@
+def greet_with(name, location):
+  return "Hello {0}, Are you in {1}?".format(name, location)
+
+print(greet_with("Andrea", "Porto - Portugal"))
+print(greet_with(name = "Giorgio", location = "Palermo"))
