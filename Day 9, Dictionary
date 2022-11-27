@@ -1,0 +1,25 @@
+programming_dictionary = {"Bug": "An error in a program that prevents the program from running as expected.", "Function": "A piece of code that you can easily call over and over again.", "Loop":"The action of doing something over and over again."}
+
+print(programming_dictionary["Bug"])
+
+#add items to dictionary
+programming_dictionary["variable"] = "A container for your data."
+
+print(programming_dictionary)
+
+empty_dictionary = {}
+empty_dictionary["First element"] = "Hello, I am the first element of this dictionary."
+
+#Wipe out the memory
+programming_dictionary = {}
+print(f"Here's the dictionary: {programming_dictionary}")
+
+#Edit 
+empty_dictionary["First element"] = "I am still number one!"
+print(empty_dictionary["First element"])
+
+#Loop 
+dict = {"1":"one", "2":"two", "3":"three", "4":"four"}
+
+for key in dict:
+  print(dict[key])
