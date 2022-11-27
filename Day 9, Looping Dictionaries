@@ -1,0 +1,47 @@
+def translate_grades_in_words(number):
+  if number >= 91 and number <= 100:
+    return "Oustanding"
+  elif number >= 81 and number <= 90:
+    return "Exceeds Expectations"
+  elif number >= 71 and number <= 80:
+    return "Acceptable"
+  else:
+    return "Fail"
+    
+student_scores = {
+  "Harry": 81,
+  "Ron": 78,
+  "Hermione": 99, 
+  "Draco": 74,
+  "Neville": 62,
+}
+
+student_grades = {}
+
+for key in student_scores:
+    grade = translate_grades_in_words(student_scores[key])
+    student_grades[key] = grade
+
+for key, value in student_grades.items():
+  print("{0} : {1}".format(key, value))
+
+#Theory
+"""
+students = {1: "Al", 2: "Jhon", 3: "Jack", 4: "Ayeye Braso", 5: "Schifatterum", 6: "Pdor figlio di chmer, della tribù di star, della terra desolata dello schiniferam", 7: "Berta, la dea dalla gamba aperta!"}
+
+for key in students:
+  print(students.get(key))
+
+print(students.keys())
+
+print(students.values())
+
+for key in students.keys():
+  print(key)
+
+for key in students.values ():
+  print(key)
+
+for key, value in students.items():
+  print("This is the key: " + str(key) + ", This is the value: " + value)
+"""
