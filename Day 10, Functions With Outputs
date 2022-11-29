@@ -1,0 +1,19 @@
+def format_name(f_name, l_name):
+  first_name = f_name[0].upper() + f_name[1:].lower()
+  last_name = l_name[0].upper() + l_name[1:].lower()
+  return first_name + " " + last_name
+
+def format_name_with_a_built_in_function(first_name, last_name):
+  if first_name == "" or last_name == "":
+    return "You didn't provide a valid input."
+  return first_name.title() + " " + last_name.title()
+
+full_name = format_name("ANDREA", "LorEnzoNi")
+print(full_name)
+
+#full_name_buit_in_funz = format_name_with_a_built_in_function("JAcK", "SpArRow!")
+full_name_buit_in_funz = format_name_with_a_built_in_function(input("Your name: "), input("Your name: "))
+print(full_name_buit_in_funz)
+
+length = len("SuperCalifragiliSticheSpiralitosoAncheSeNonlousiSeiUnCiccioBomboloCheARitroso!")
+print(length)
