@@ -1,0 +1,7 @@
+def defining_docstrings(first_data, second_data):
+  """
+  It takes two datas in input.
+  """
+  return first_data + " " + second_data
+
+print(defining_docstrings("Andrea Edson", "Lorenzoni"))
