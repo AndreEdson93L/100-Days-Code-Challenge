@@ -1,0 +1,62 @@
+#Calculator
+logo = """
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+"""
+
+#addition
+def add(n1, n2):
+  return n1 + n2
+
+#subtraction
+def subtraction(n1, n2):
+  return n1 - n2
+  
+#multiplication
+def multiplication(n1, n2):
+  return n1 * n2
+  
+#division
+def division(n1, n2):
+  return n1 / n2
+
+print(logo)
+
+should_continue = True
+
+operations = {
+  "+": add,
+  "-": subtraction, 
+  "*": multiplication,
+  "/": division
+}
+while should_continue:
+  num1 = float(input("What's the first number: "))
+  num2 = float(input("What's the second number: "))
+  
+  for key, value in operations.items():
+    print(key)
+    
+  operation_symbol = input("Choose one of the operations above: ")
+  
+  calculation_function = operations[operation_symbol]
+  result = calculation_function(num1, num2)
+  
+  #round(myFloat, 2)
+  print(f"{num1} {operation_symbol} {num2} = {round(result, 2)}")
+
+  input_flag = input("Type 'y' to continue using the calculator, otherwise press any key: ")
+  if input_flag != "y":
+    should_continue = False
