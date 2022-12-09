@@ -1,0 +1,14 @@
+# Global Constants
+
+PI = 3.14159
+URL = "https://www.google.com"
+TWITTER_HANDLE = "@andrea_non_uso_twitter"
+
+def calc():
+  return PI * 2
+
+def address():
+  return URL
+
+def twitter_account():
+  return TWITTER_HANDLE
