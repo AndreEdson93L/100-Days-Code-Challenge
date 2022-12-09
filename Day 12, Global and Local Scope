@@ -1,0 +1,81 @@
+################### Scope ####################
+
+enemies = 1
+
+def increase_enemies():
+  enemies = 2
+  print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+# Local Scope
+
+def drink_portion():
+  potion_strength = 2
+  print(potion_strength)
+
+drink_portion()
+
+# Global Scope
+
+player_health = 10
+
+def drink_portion():
+  potion_strength = 2
+  return player_health + potion_strength
+
+print(drink_portion())
+print(player_health)
+
+# There is no Block Scope (Only functions create a block scope).
+
+game_level = 3
+
+enemies = ["Skeleton", "Zombie", "Giggi D' Alessio"]
+
+if game_level < 5:
+  new_enemy = enemies[0]
+  number = 13
+
+print(new_enemy)
+print(number)
+
+# Modifying Global Scope
+
+number_of_enemies = 23
+old_enemy = "Television"
+new_enemy = "Youtube Algorithm"
+
+def increase_enemies():
+  number_of_enemies = 34
+  old_enemy = "Tv"
+  old_enemy = old_enemy + " And Gigi D' Alessio!"
+  number_of_enemies = number_of_enemies - 15
+  return "Number of enemies: " + str(number_of_enemies) + ", Type of enemies: " + old_enemy 
+
+print(increase_enemies())
+print(old_enemy)
+
+# How to actually use global variables in yours functions 
+
+enemies = 15
+
+# Bad Practice
+def descrease_enemies():
+  global enemies
+  enemies -= 1
+  print(enemies)
+
+# Good Practice
+def increase_enemies():
+  return enemies + 2
+
+descrease_enemies()
+print(enemies)
+print(increase_enemies())
+
+"""
+Usually develepers in Python don't try to modify a global variable inside a function.
+"""
+  
