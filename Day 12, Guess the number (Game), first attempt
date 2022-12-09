@@ -1,0 +1,48 @@
+import random as r
+
+def game():
+  print("Welcome to the game 'Guess the Number between 0 and 100'.")
+  guesses = 1
+  play_the_game = True
+  
+  while guesses > 0:
+    
+    if play_the_game == True:
+      guesses = int(input("Choose the number of guesses that you would like to have: "))
+      number_to_guess = r.randint(0, 100)
+      play_the_game = False
+    print(f"Number of available guesses: {guesses}")
+    your_guess = int(input("Choose a number: "))
+
+    guesses -= 1
+    
+    if your_guess > number_to_guess:
+      print("Too High!")
+    elif your_guess < number_to_guess: 
+      print("Too Low!")
+    elif your_guess == number_to_guess:
+      print("You win!")
+      play_again = input("If you would like to play again press 'y', otherwise press any key: ").lower()
+      if play_again == "y":
+        guesses = 1
+        play_the_game = True
+      else:
+        guesses = 0
+    else:
+      print("Unexpected error.")
+
+
+    if guesses == 0 or your_guess == number_to_guess:
+      if guesses == 0:
+        print("You lose the game!")
+      
+      play_again = input("If you would like to play again press 'y', otherwise press any key: ").lower()
+      if play_again == "y":
+        guesses = 1
+        play_the_game = True
+      else:
+        guesses = -1
+        print("Bye bye!!")
+
+
+game()
