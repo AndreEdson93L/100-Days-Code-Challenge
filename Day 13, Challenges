@@ -1,0 +1,104 @@
+# 1. Write a program that checks whether a number is even or odd and print the result.
+#Program written in Python.
+
+def even_or_odd_with_return(number_to_check):
+  """
+  Insert an integer. I will tell if is odd or even.
+  If it is odd I will return False. 
+  If it is even I will return True.
+  """
+
+  if number_to_check % 2 == 0:
+    return True
+  else:
+    return False
+
+def even_or_odd_script():
+  """
+  This is a script that allows to check if a number is even or odd.
+  It is a command line program.
+  Also, it is a program that show how to check the input in Python; that's the 
+  reason why I decided to write this function withouth a return value.
+  """
+  valid_input = True
+
+  while valid_input:
+    try:
+      number_to_check = int(input("Please insert an Integer. I will tell you if the number is even or odd.. : "))
+    except ValueError:
+      print("Invalid Input.")
+      continue
+    else:
+      valid_input = False
+
+    if number_to_check % 2 == 0:
+      print(f"The number {number_to_check} is even.")
+    else:
+      print(f"The number {number_to_check} is odd.")
+
+    repeat_the_script = input("If you would like to check a new number press 'y', otherwise press any key: ").lower()
+    
+    if repeat_the_script == 'y':
+      valid_input = True
+    else:
+      print("Goodbye!")
+
+
+print(even_or_odd_with_return(7))
+print(even_or_odd_with_return(8))
+even_or_odd_script()
+
+#//////////////////////////////////////////////////////////////////////////////////////////////
+#2.Write a program that counts from 1 to 100 by printing only the multiples of 3
+
+for n in range(1, 101):
+  if n % 3 == 0:
+    print(n)
+
+#//////////////////////////////////////////////////////////////////////////////////////////////
+#3.Write a program that replaces the word rain with sunshine in the sentence "It's a beautiful rainy day!" and print the result.
+
+import re
+
+sentence = "It's a beautiful rainy day!"
+
+# first solution, regex
+new_sentence = re.sub(pattern = "rainy",
+                   repl = "sunshine",
+                   string = sentence)
+
+print(new_sentence)
+
+# second solution, replace method
+sentence = "It's a beautiful rainy day!"
+
+if "rainy" in sentence:
+  new_sentence = sentence.replace("rainy", "sunshine")
+  print(new_sentence)
+
+#//////////////////////////////////////////////////////////////////////////////////////////////
+#4.At the following address extract the postal code "Avenida da Liberdade nº 45 4710-373 Braga!".
+import re
+
+address = "Avenida da Liberdade nº 45 4710-373 Braga!"
+
+def extract_postal_code(address):
+  """
+For this specific task (extract the postal code from an address) I think the best solution is to use a regex expression.
+  """
+  return re.findall("[0-9]{4}\-{1}[0-9]{3}", address)[0]
+
+print(extract_postal_code(address))
+
+#//////////////////////////////////////////////////////////////////////////////////////////////
+#5. In the list('A', 'B', 'C', 'D', 'E', 'F', 'A','A','A','Z','Z','B' ) print the number of times the letter A is repeated.
+
+list = ['A', 'B', 'C', 'D', 'E', 'F', 'A','A','A','Z','Z','B']
+
+counter = 0
+
+for letter in list:
+  if letter == 'A':
+    counter += 1
+
+print("The letter A is repeated n. {0} times.".format(counter))
