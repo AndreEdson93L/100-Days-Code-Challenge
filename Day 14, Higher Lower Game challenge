@@ -1,0 +1,51 @@
+import random
+
+presidents = {
+    "George Washington": {"followers": random.randint(100, 1000)},
+    "John Adams": {"followers": random.randint(100, 1000)},
+    "Thomas Jefferson": {"followers": random.randint(100, 1000)},
+    "James Madison": {"followers": random.randint(100, 1000)},
+    "James Monroe": {"followers": random.randint(100, 1000)},
+    "John Quincy Adams": {"followers": random.randint(100, 1000)},
+    "Andrew Jackson": {"followers": random.randint(100, 1000)},
+    "Martin Van Buren": {"followers": random.randint(100, 1000)},
+    "William Henry Harrison": {"followers": random.randint(100, 1000)},
+    "John Tyler": {"followers": random.randint(100, 1000)},
+    "James K. Polk": {"followers": random.randint(100, 1000)},
+    "David D. Eisenhower": {"followers": random.randint(100, 1000)},
+    "John F. Kennedy": {"followers": random.randint(100, 1000)},
+    "Lyndon B. Johnson": {"followers": random.randint(100, 1000)},
+    "Richard Nixon": {"followers": random.randint(100, 1000)},
+    "Gerald Ford": {"followers": random.randint(100, 1000)},
+    "Jimmy Carter": {"followers": random.randint(100, 1000)},
+    "Ronald Reagan": {"followers": random.randint(100, 1000)},
+    "George H. W. Bush": {"followers": random.randint(100, 1000)},
+    "Bill Clinton": {"followers": random.randint(100, 1000)},
+    "George W. Bush": {"followers": random.randint(100, 1000)},
+    "Barack Obama": {"followers": random.randint(100, 1000)},
+    "Donald Trump": {"followers": random.randint(100, 1000)},
+    "Joe Biden": {"followers": random.randint(100, 1000)},
+}
+
+logo = "Higher Lower"
+
+# First part
+# Random value 1, Random value 2 from the list.
+# If this random values are the same, the algo choose again a random value 2 until they are different.
+# To do so I could compare the Keys values. 
+# We should use a while loop to make it work.
+
+# Second part
+# User should choose who has more followers.
+# If the user get it right it has to keep playing. A counter will memorize the score.
+# We should use a while loop to make it work.
+
+# First part breakdown
+# To make things a little bit more complicated, for the first part we could have two functions.
+# The first function will generate the random value, that will be stored in a temp variable.
+# The second funtion will compare the two temp variables. If they are not the same it will return false, otherwise il will return true and first function will run again until we will have two different keys.
+
+# Second part breakdown
+# We could write a fuction to wrap all this game logic. It shouldn't have any parameters. We need a while loop a flag to end the game in the moment that we lose. 
+
+# If the user loses the game, the game just terminated. It will print also the score at the end.
