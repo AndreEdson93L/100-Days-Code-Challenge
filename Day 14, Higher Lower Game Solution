@@ -1,0 +1,72 @@
+import random as r
+
+presidents = {
+    "George Washington": {"followers": 100},
+    "John Adams": {"followers": r.randint(100, 1000)},
+    "Thomas Jefferson": {"followers": 200},
+    "James Madison": {"followers": 215},
+    "James Monroe": {"followers": 455},
+    "John Quincy Adams": {"followers": 780},
+    "Andrew Jackson": {"followers": 10},
+    "Martin Van Buren": {"followers": 50},
+    "William Henry Harrison": {"followers": 70},
+    "John Tyler": {"followers": r.randint(100, 1000)},
+    "James K. Polk": {"followers": r.randint(100, 1000)},
+    "David D. Eisenhower": {"followers": 90},
+    "John F. Kennedy": {"followers": 60},
+    "Lyndon B. Johnson": {"followers": 65},
+    "Richard Nixon": {"followers": r.randint(100, 1000)},
+    "Gerald Ford": {"followers": 15},
+    "Jimmy Carter": {"followers": 800},
+    "Ronald Reagan": {"followers": 950},
+    "George H. W. Bush": {"followers": 25},
+    "Bill Clinton": {"followers": r.randint(100, 1000)},
+    "George W. Bush": {"followers": r.randint(100, 1000)},
+    "Barack Obama": {"followers": r.randint(100, 1000)},
+    "Donald Trump": {"followers": 340},
+    "Joe Biden": {"followers": r.randint(100, 1000)},
+}
+
+def set_values():
+  first_random_value = r.sample(list(presidents.keys()), 1)[0]
+  second_random_value = r.sample(list(presidents.keys()), 1)[0]
+  if first_random_value != second_random_value:
+    return first_random_value, second_random_value
+
+def get_user_choice(first_random_value, second_random_value):
+  message_to_print = "1. {0} or 2. {1}".format(first_random_value, second_random_value)
+  print(message_to_print)
+  return input("Who has more followers? \nChoose 1 or 2: ")
+
+def play_the_game():
+  has_to_keep_guessing = True
+  counter = 0
+
+  while has_to_keep_guessing:
+    values = set_values()
+    first_random_value = values[0]
+    second_random_value = values[1]
+    print("That's cheating.. whatever.. 1 = {0}".format(presidents[first_random_value]))
+    print("That's cheating.. whatever.. 2 = {0}".format(presidents[second_random_value]))
+    print("Joking, it has just debugging purpose.")
+    user_choice = get_user_choice(first_random_value, second_random_value)
+
+    try:
+      first_value_to_compare = list(presidents[first_random_value].values())[0]
+      second_value_to_compare = list(presidents[second_random_value].values())[0]
+
+      
+      if first_value_to_compare > second_value_to_compare and user_choice == "1":
+        print("Next question..")
+        counter += 1
+      elif first_value_to_compare < second_value_to_compare and user_choice == "2":
+        print("Next question..")
+        counter += 1
+      else:
+        print(f"Here's your final score: {counter}. Bye!")
+        has_to_keep_guessing = False
+    except KeyError:
+        print("Invalid choice. Please try again.")
+        continue
+
+play_the_game()
