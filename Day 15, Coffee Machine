@@ -1,0 +1,176 @@
+from collections import defaultdict
+
+resources = {
+    "water": 5000,
+    "milk": 5000,
+    "coffee": 5000
+}
+
+flavors = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+            "milk": 0,
+            "price": 150
+        }
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "coffee": 24,
+            "milk": 150,
+            "price": 250
+        }
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "coffee": 24,
+            "milk": 100,
+            "price": 300
+        }
+    },
+}
+
+
+def total_coins_inserted():
+    coin_inputs = [
+        ("How many coins of 1 cent: ", 1),
+        ("How many coins of 2 cents: ", 2),
+        ("How many coins of 5 cents: ", 5),
+        ("How many coins of 10 cents: ", 10),
+        ("How many coins of 20 cents: ", 20),
+        ("How many coins of 50 cents: ", 50),
+        ("How many coins of 1 euro: ", 100),
+        ("How many coins of 2 euro: ", 200)
+    ]
+
+    coin_values = []
+    error_message = "Invalid input. Please enter a valid integer."
+
+    for prompt, value in coin_inputs:
+        while True:
+            try:
+                coin_count = int(input(prompt))
+                if coin_count < 0:
+                    print(error_message)
+                break
+            except ValueError:
+                print(error_message)
+        coin_values.append(coin_count * value)
+    print(f"You have inserted a total of {sum(coin_values)} cents.")
+    return sum(coin_values)
+
+
+def choose_the_flavours():
+    while True:
+        type_of_flavor = input("Choose your flavor (espresso/latte/cappuccino): ")
+        if type_of_flavor in ["espresso", "latte", "cappuccino"]:
+            print(f"You have chosen the flavor: {type_of_flavor}.")
+            print(f"The price of your flavor is {return_the_price(type_of_flavor)} cents.")
+            return type_of_flavor
+        else:
+            print("Invalid choice.")
+
+
+def return_the_price(flavor):
+    return flavors[flavor]["ingredients"]["price"]
+
+
+def give_coins_exchange_to_the_user(exchange):
+    if sum(exchange) > 0:
+        counts = defaultdict(int)
+        for coin in exchange:
+            counts[coin] += 1
+
+        give_the_exchange = {
+            200: "two euros",
+            100: "one euro",
+            50: "fifty cents",
+            20: "twenty cents",
+            10: "ten cents",
+            5: "five cents",
+            2: "two cents",
+            1: "one cent"
+        }
+
+        print("Here's the exchange:")
+        for coin, name in give_the_exchange.items():
+            count = counts[coin]
+            if count:
+                print(f"{count} x {name}")
+    else:
+        print("There is no exchange.")
+
+
+def check_difference_btw_coins_inserted_and_flavor_price(coins_inserted, flavor_price):
+    coins = [200, 100, 50, 20, 10, 5, 2, 1]
+    total_coins = coins_inserted
+    cost = flavor_price
+
+    exchange_due = total_coins - cost
+
+    while exchange_due < 0:
+        final_choice = input("There isn't enough cash. If you want to insert others coins press 1, otherwise any key: ")
+        if final_choice == "1":
+            exchange_due = total_coins + total_coins_inserted()
+            print(f"In the machine there is a total of: {exchange_due} cents.")
+            exchange_due -= cost
+        else:
+            return False, total_coins
+
+    # Calculate the exchange in the smallest number of coins possible
+    exchange = []
+    for coin in coins:
+        while exchange_due >= coin:
+            exchange_due -= coin
+            exchange.append(coin)
+
+    return True, exchange
+
+
+def derogate_the_product(is_enough_cash, total, flavor):
+    is_enough = is_enough_cash[0]
+    exchange = is_enough_cash[1]
+
+    if is_enough:
+        ingredients = flavors[flavor]["ingredients"]
+        water_product = ingredients["water"]
+        coffee_product = ingredients["coffee"]
+        milk_product = ingredients["milk"]
+
+        water_machine = resources["water"]
+        coffee_machine = resources["coffee"]
+        milk_machine = resources["milk"]
+
+        if water_machine > water_product and coffee_machine > coffee_product and milk_machine > milk_product:
+            print(
+                f"Thanks for using our services! Here's your flavor: {flavor}\nAnd following your exchange.. don't "
+                f"forget it!")
+
+            give_coins_exchange_to_the_user(exchange)
+            return True
+
+        else:
+            print("Sorry, the machine doesn't have enough resources.")
+            print(f"Here's the money you have inserted: {total} cents")
+            return False
+
+
+while True:
+    user_flavor_choice = choose_the_flavours()
+    price = return_the_price(user_flavor_choice)
+    user_money = total_coins_inserted()
+    has_enough_money = check_difference_btw_coins_inserted_and_flavor_price(user_money, price)
+    is_able_to_order_again = derogate_the_product(has_enough_money, user_money, user_flavor_choice)
+
+    has_to_order_again = ""
+    if is_able_to_order_again:
+        has_to_order_again = input(
+            "If you would like to order again press 'y', otherwise press any other key: ").lower()
+    else:
+        break
+
+    if has_to_order_again != 'y':
+        break
